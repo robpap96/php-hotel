@@ -53,32 +53,36 @@
         <!-- ///BOOTSTRAP -->
     </head>
     <body>
-        <?php 
-            foreach($hotels as $hotel)
-                echo $hotel["name"];
-        ?> 
-
+        
         <!-- TAB-BOOTSTRAP -->
         <table class="table table-striped">
             <thead>
         
             </thead>
             <tbody>
-                <tr class="table-active">
-                ...
-                </tr>
+                
                 <tr>
-                ...
+                    <th scope="row">Name</th>
+                    <th scope="row">Description</th>
+                    <th scope="row">Parking</th>
+                    <th scope="row">Vote</th>
+                    <th scope="row">Distance to Center</th>
+
                 </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td colspan="2" class="table-active">Larry the Bird</td>
-                <td>@twitter</td>
-                </tr>
+                <?php foreach($hotels as $hotel){ ?> 
+                    <tr>
+                        <td><?php echo $hotel["name"]?></td>           
+                        <td><?php echo $hotel["description"]?></td>
+                        <td><?php echo $hotel["parking"] ? 'si' : 'no' ?></td>
+                        <td><?php echo $hotel["vote"]?></td>
+                        <td><?php echo $hotel["distance_to_center"]?></td>
+                    </tr>
+                
+                <?php } ?>
+
             </tbody>
         </table>
         <!-- ///TAB-BOOTSTRAP -->
-        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
 </html>
